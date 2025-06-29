@@ -1,0 +1,77 @@
+IF OBJECT_ID ('bronze.leads', 'U') IS NOT NULL
+	DROP TABLE bronze.leads;
+CREATE TABLE bronze.leads (
+	[index] INT,
+	account_id NVARCHAR(50),
+	lead_owner NVARCHAR(50),
+	first_name NVARCHAR(50),
+	last_name NVARCHAR(50),
+	company NVARCHAR(50),
+	phone_1 NVARCHAR(50),
+	phone_2 NVARCHAR(50),
+	email_1 NVARCHAR(50),
+	email_2 NVARCHAR(50),
+	website NVARCHAR(50),
+	[source] NVARCHAR(50),
+	deal_stage NVARCHAR(50),
+	notes NVARCHAR(100)
+);
+IF OBJECT_ID ('bronze.customers', 'U') IS NOT NULL
+	DROP TABLE bronze.customers;
+CREATE TABLE bronze.customers (
+	[index] INT,
+	customer_id NVARCHAR(50),
+	first_name NVARCHAR(50),
+	last_name NVARCHAR(50),
+	company NVARCHAR(50),
+	city NVARCHAR(50),
+	country NVARCHAR(100),
+	phone_1 NVARCHAR(100),
+	phone_2 NVARCHAR(50),
+	email NVARCHAR(50),
+	subscription_date NVARCHAR(50),
+	website NVARCHAR(50)
+);
+IF OBJECT_ID ('bronze.organizations', 'U') IS NOT NULL
+	DROP TABLE bronze.organizations;
+CREATE TABLE bronze.organizations (
+	[index] INT,
+	organization_id NVARCHAR(50),
+	[name] NVARCHAR(50),
+	website NVARCHAR(50),
+	country NVARCHAR(100),
+	[description] NVARCHAR(100),
+	founded INT,
+	industry NVARCHAR(100),
+	number_of_employees INT
+);
+IF OBJECT_ID ('bronze.people', 'U') IS NOT NULL
+	DROP TABLE bronze.people;
+CREATE TABLE bronze.people (
+	[index] INT,
+	[user_id] NVARCHAR(50),
+	first_name NVARCHAR(50),
+	last_name NVARCHAR(50),
+	sex NVARCHAR(50),
+	email NVARCHAR(50),
+	phone NVARCHAR(50),
+	date_of_birth NVARCHAR(50),
+	job_title NVARCHAR(100)
+);
+IF OBJECT_ID ('bronze.products', 'U') IS NOT NULL
+	DROP TABLE bronze.products;
+CREATE TABLE bronze.products (
+	[index] INT,
+	[name] NVARCHAR(100),
+	[description] NVARCHAR(100),
+	brand NVARCHAR(50),
+	category NVARCHAR(50),
+	price INT,
+	currency NVARCHAR(50),
+	stock INT,
+	ean INT, 
+	color NVARCHAR(50),
+	size NVARCHAR(50),
+	availability NVARCHAR(50),
+	internal_id INT
+);
